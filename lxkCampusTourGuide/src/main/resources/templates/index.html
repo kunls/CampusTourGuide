@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>烟台大学导游系统</title>
+    <style>
+        #rank{
+            border: 15px solid #999999;
+        }
+        .t02{
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function() {
+        var oTable = document.getElementById("rank");
+        for ( var i = 1; i < oTable.rows.length; i++) {
+            oTable.rows[i].cells[0].innerHTML = (i);
+        }
+    }
+</script>
+
+<body bgcolor="#99CCCC">
+    <h1 align="center" style="color: #FFCC99">烟台大学校园导游系统</h1>
+    <p align="center">+++++++++++++++++++++++++++++++++</p>
+    <p align="center"></p>
+    <div>
+        <form action="index.html" method="post" th:action="@{/index}">
+            <table align="center">
+                <tr>
+                    <td width="80">用户：</td>
+                    <td><input name="touristName" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>当前位置：</td>
+                    <td><input name="currentLocation" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>目的地：</td>
+                    <td><input name="destination" type="text" ></td>
+                </tr>
+                <tr>
+                    <td colspan="2">=================================</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><button type="submit">查询</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <p>***********************************************************************************************************************************************************************************************************</p>
+    <div>
+        <p align="center" style="font-weight: bold">景点热度榜</p>
+
+            <table align="center" id="rank">
+            <thead>
+            <tr class="t02">
+                <td class="t02">*热度*</td>
+                <td class="t02">*景点名*</td>
+                <td class="t02">*寻访人数*</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="point:${session.pointList}" class="t02">
+                <td align="center" class="t02"></td>
+                <td th:text="${point.getName()}" class="t02"></td>
+                <td th:text="${point.getNumVisitors()}" align="center" class="t02"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+</head>
+<body bgcolor="#99CCCC">
+    <h1 align="center" style="color: #FFCC99">查询结果</h1>
+    <div>
+            <table align="center">
+                <tr>
+                    <td>距目的地最短距离:</td>
+                    <td><label th:text="${minDistance}+'(m)'"></label></td>
+                </tr>
+                <tr>
+                    <td>最短路径:</td>
+                    <td><label th:text="${wholePath}"></label></td>
+                </tr>
+                <tr>
+                    <td>访问人数:</td>
+                    <td><label th:text="${session.numVisitors}"></label></td>
+                </tr>
+                <tr>
+                    <td>目的地详细信息:</td>
+                    <td><label th:text="${session.introduction}"></label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">=======================================</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="button" name="Submit" value="返回" onclick="javascript:window.history.back(-1);"></td>
+                </tr>
+            </table>
+    </div>
+</body>
+</html>
