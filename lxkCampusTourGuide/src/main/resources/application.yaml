@@ -7,3 +7,5 @@ spring:
   druid:
     stat-view-servlet:
       enabled: true
+  mvc:
+    static-path-pattern: /**
