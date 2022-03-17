@@ -6,7 +6,17 @@ package com.lxk.campustourguide.bean;
  */
 public class Point {
     private int id;
+    private int pointId;
     private String name;
+
+    public int getPointId() {
+        return pointId;
+    }
+
+    public void setPointId(int pointId) {
+        this.pointId = pointId;
+    }
+
     private int numVisitors;
 
     public int getNumVisitors() {

@@ -41,7 +41,7 @@ public class MyController {
         pointService.addVisitor(graphService.findIdByName(destination));
         touristMapper.insert(tourist);
 
-        String image="images/"+destination+".webp";
+        String image="images/"+destination+".jpg";
         session.setAttribute("image",image);
         session.setAttribute("currentLocation",currentLocation);
         session.setAttribute("destination",destination);

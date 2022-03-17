@@ -5,6 +5,16 @@ package com.lxk.campustourguide.bean;
  * @date 2022/3/10 - 16:42
  */
 public class Graph {
+    private int vecNum;
+
+    public int getVecNum() {
+        return vecNum;
+    }
+
+    public Graph(int vecNum) {
+        this.vecNum = vecNum;
+    }
+
     private int edgeNum;
     private Point[] points;
     private int[][] mMatrix;

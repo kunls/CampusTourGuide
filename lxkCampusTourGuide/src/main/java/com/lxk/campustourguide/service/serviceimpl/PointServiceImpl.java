@@ -20,18 +20,18 @@ public class PointServiceImpl extends ServiceImpl<PointMapper, Point> implements
     PointMapper pointMapper;
     //二分查找
     @Override
-    public void addVisitor(int id) {
+    public void addVisitor(int pointId) {
         List<Point> pointList = pointMapper.selectList(null);
         int left=0,right=pointList.size()-1,mid;
         while (left<=right){
             mid=(left+right)/2;
-            if(pointList.get(mid).getId()==id){
+            if(pointList.get(mid).getPointId()==pointId){
                 pointList.get(mid).setNumVisitors(pointList.get(mid).getNumVisitors()+1);
                 Point point = pointList.get(mid);
                 pointMapper.updateById(point);
                 return;
             }
-            else if(pointList.get(mid).getId()>id){
+            else if(pointList.get(mid).getPointId()>pointId){
                 right=mid-1;
             }
             else{

@@ -5,13 +5,19 @@
     <title>查询结果</title>
     <style>
         img{
-            height: 350px;
-            width: 450px;
+            height: 450px;
+            width: 550px;
+        }
+        body {
+            color: #ffffff;
+            background-image: url("../images/environmental-protection-g5ab1e4ced_1920.jpg");
+            background-attachment: fixed;
+            background-size: cover;
         }
     </style>
 </head>
-<body bgcolor="#99CCCC">
-    <h1 align="center" style="color: #FFCC99">查询结果</h1>
+<body>
+    <h1 align="center">查询结果</h1>
     <div>
             <table align="center">
                 <tr>
@@ -23,7 +29,7 @@
                     <td><label th:text="${wholePath}"></label></td>
                 </tr>
                 <tr>
-                    <td>访问人数:</td>
+                    <td>寻访人数:</td>
                     <td><label th:text="${session.numVisitors}"></label></td>
                 </tr>
                 <tr>
@@ -38,7 +44,7 @@
                 </tr>
             </table>
         <p align="center">
-        <img th:src="@{${session.image}}" alt="图片显示异常" >
+            <img th:src="@{${session.image}}" alt="图片显示异常" >
         </p>
     </div>
     <p align="center">
